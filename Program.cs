@@ -62,7 +62,7 @@ namespace SekaiDecryptor
                             {
                                 for (int j = 0; j < 8; j++)
                                 {
-                                    if (j < 5) input[4+i*8+j] = (byte)~input[4+i * 8 + j];
+                                    if (j < 5) input[4+i*8+j] = (byte)(~input[4+i * 8 + j] && 0xFF);
                                 }
                             }
                             FileStream fileStream = File.OpenWrite(saveFile);
